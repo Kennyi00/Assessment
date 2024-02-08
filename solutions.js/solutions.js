@@ -46,6 +46,23 @@
 //If the number is divisible by any number in this range, return false.
 //If no divisors are found, return true.
 
+    function checkPrime(num) {
+        if(num <= 1) {
+            return false
+        }
+        for(let i = 2; i < num; i++) {
+            if(num % i === 0 ){
+                return false
+            }
+        }
+    }
+
+//PRINT PRIME NUM\\
+//Use a for loop to iterate through numbers from 2 up to the specified limit.
+//For each number, use the checkPrimefunction to check if it's prime.
+//If checkPrimereturns true, console.log the number.
+//Commit your work with the message "prime numbers completed".
+
 function printPrimes(num) {
     for(let i = 2; i <= num; i++){
         if(checkPrime(i)){
@@ -54,3 +71,11 @@ function printPrimes(num) {
     }
 }
 printPrimes(19)
+
+
+//Calculate the cube of the number by multiplying the number by itself twice.
+//Return the result.
+//Commit your work with the message "calculate the cube completed".
+
+const calculateCube = num => Math.pow(num, 3)
+console.log(calculateCube(2))
