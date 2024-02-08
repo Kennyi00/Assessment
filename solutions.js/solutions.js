@@ -37,3 +37,20 @@
         return sum
     }
         console.log(sumArray([5,6,7,8]))
+
+
+
+    //PRIME NUMBERS\\
+//Check if the number is less than or equal to 1. If so, return falsebecause it's not prime.
+//Use a for loop to iterate from 2 up to the square root of the number.
+//If the number is divisible by any number in this range, return false.
+//If no divisors are found, return true.
+
+function printPrimes(num) {
+    for(let i = 2; i <= num; i++){
+        if(checkPrime(i)){
+            console.log(i)
+        }
+    }
+}
+printPrimes(19)
