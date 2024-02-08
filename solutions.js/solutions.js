@@ -9,4 +9,11 @@
 
 
     //PALINDROME\\
+//Convert the input string to lowercase to ensure the comparison is case-insensitive.
+//Split the string into an array of characters, reverse the array, and then join it back into a string.
+//Compare the original lowercase string with the reversed string.
+//If they are the same, the function should return true; otherwise, it returns false.
+//Commit your work with the message "palindrome completed".
+    const palindrome = (string) => string.toLowerCase() === string.toLowerCase().split('').reverse().join('') ? true:false
+    console.log(palindrome("racecare"))
     
