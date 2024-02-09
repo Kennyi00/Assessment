@@ -109,3 +109,12 @@ console.log(cheVowel('a'))
 }
 
 console.log(twoLengths("pepperoni pizza"))
+
+//GET MULTIPLE LENGTHS\\
+//Use the mapfunction to transform each string in the input array into its length.
+//Return the resulting array of lengths.
+//Commit your work with the message "get multiple lengths completed".
+
+const inputArray = ["basketball", "football", "soccer", "baseball"]
+const resultLengths = inputArray.map(str => str.length)
+console.log(resultLengths)
