@@ -180,3 +180,19 @@ console.log(projEuler(212))
 
 const needleInAHaystack = arr => arr.indexOf("needle")
 console.log(needleInAHaystack(["Where", "Is", "This", "Needle", "In", "The", "Haystack"]))
+
+//SUM THE POSITIVE\\
+//Use the filtermethod to create a new array containing only positive numbers.
+//Use the reducemethod to sum the values of the filtered array.
+//Return the sum.
+//Commit your work with the message "sum the positive completed".
+
+function sumOfPositiveNumbers(numbers) {
+    const positiveNums = numbers.filter(num => num > 0);
+    const sum = positiveNums.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    return sum;
+}
+
+const nputArray = [2, -2, 1, -1, 3, -3];
+const reesult = sumOfPositiveNumbers(inputArray);
+console.log(reesult);
