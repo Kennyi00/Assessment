@@ -18,7 +18,7 @@
 //If they are the same, the function should return true; otherwise, it returns false.
 //Commit your work with the message "palindrome completed".
     const palindrome = (string) => string.toLowerCase() === string.toLowerCase().split('').reverse().join('') ? true:false
-    console.log(palindrome("racecare"))
+    console.log(palindrome("racecar"))
     
    
    
@@ -103,7 +103,7 @@ console.log(cheVowel('a'))
 //Return an array containing the lengths of the two input strings.
 //Commit your work with the message "get two lengths completed".
 
-    function twoLengths(str) {
+function twoLengths(str) {
     const words = str.split(" ")
     return words.map(str => $(words), $(words.length))
 }
@@ -118,3 +118,19 @@ console.log(twoLengths("pepperoni pizza"))
 const inputArray = ["basketball", "football", "soccer", "baseball"]
 const resultLengths = inputArray.map(str => str.length)
 console.log(resultLengths)
+
+//MAXIMUM OF THREE NUMBERS\\
+//Use the Math.maxfunction to find the maximum of the three numbers.
+//Return the maximum number.
+//Commit your work with the message "maximum of three numbers completed".
+
+    function findMax(...numbers) {
+        if(numbers.length === 0) {
+            return undefined
+        }
+        return Math.max(...numbers)
+    }
+
+    const result = findMax(15,35,12)
+    console.log(result)
+
