@@ -196,3 +196,133 @@ function sumOfPositiveNumbers(numbers) {
 const nputArray = [2, -2, 1, -1, 3, -3];
 const reesult = sumOfPositiveNumbers(inputArray);
 console.log(reesult);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//IDENTIFYING THE PROBLEM SOLVING PATTERS\\
+//Step 1: Read and understand the pattern, and the code given in the example
+//Step 2: Make sure you did step 1 it will just be confusing if you don't do step 1
+//Step 3: Re-write the example in psuedo-code like the problems you were given above
+//Step 4: Use the SOP we created in Outcomes to now try to solve the problems that are given
+
+//Read the problem
+//Understand the problem
+//Explore Concrete Examples
+//Break it down
+//Simplify/Solve Loop
+//Look Back and Refactor
+
+//Step 5: After taking thirty minutes on each question, look up the answer online
+//Step 6: Analyze the solution you found and compare it to yours
+//Step 7: Write out the solution you found in psuedocode form and add it as comments in solutions.js and then try to solve it again as many times as you like using the psuedocode.
+//Step 8: Doing it this way above is not the most fun way and may cause you're brain to hurt just a tad, this is good, this is an approved method no matter if you are nuerotypical or nuerodivergent
+//Step 9: Trust the process and do not deviate to get the best benefit
+
+//VALID ANAGRAM\\
+
+function validAnagram(first, second) { //Takes Two Strings As Arguments //Function- a set of statements that perform a task or calculates a value
+    if (first.length !== second.length) { //Determines if the lengths of the two strings are different?
+        return false; //If they are not equal return false
+    }
+
+    const lookup = {}; //Sets an empty object call "lookup"
+
+    for (let i = 0; i < first.length; i++) { //Goes through each character in the first string.
+        let letter = first[i];
+        // If letter exists, increment, otherwise set to 1
+        lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1; // Checks to see if the current letter already exists as a key in the "lookup" object.
+    }
+
+    for (let i = 0; i < second.length; i++) { // Goes through each character in the second string.
+        let letter = second[i];
+        // Can't find letter or letter is zero then it's not an anagram
+        if (!lookup[letter]) { // Checks if the current letter exists in the "lookup" object. If not return false because the current letter does not show in the first stringg.
+            return false;
+        } else {
+            lookup[letter] -= 1;
+        }
+    }
+
+    return true; // If the loops finish without returning false it means that boths strings have the same characters with the same frequencies making them
+    //anagrams.
+}
+
+
+//Question 2: SAME FREQUENCY\\
+    function equalFrequency(num1, num2) {
+        let strNum1 = num1.toString()
+        let strNum2 = num2.toString()
+            if (strNum1.length !== strNum2.length) {
+                return false;
+            }
+
+        let frequencyCounter1 = {}
+        let frequencyCounter2 = {}
+            for (let digit of strNum1) {
+                frequencyCounter1[digit] = (frequencyCounter1[digit] || 0) + 1
+            }
+
+        for (let key in frequencyCounter1) {
+            if (!(key in frequencyCounter2) || frequencyCounter1[key] !== frequencyCounter2[key]) {
+                return false
+
+            }
+        }
+        return true;
+    }
+
+        let answer = equalFrequency(34, 14)
+        console.log(answer)
+
+
+
+
+        //QUESTION 3: ARE THERE DUPLICATES\\
+        ///MY ATTEMPT
+        function areThereDuplicates(first,second,third) {
+            if (first.length === second.length === third.length) {
+                return true;
+            }
+            const lookup = {}
+            for (let i =0; i < first.length; i++) {
+                let num = first[i];
+                lookup[num] = 1;
+            }
+                for (let i = 0; i < second.length; i ++) {
+                    let num = second[i]
+                    if (!lookup[num]) {
+                        return false;
+                    } else {
+                        lookup[num] -= 1;
+                }
+        }
+        return true
+    }
+
+    //LOOKED UP ANSWER
+    function areThereDuplicates() {
+        let frequencyCounter = {};
+      
+       
+        for (let i = 0; i < arguments.length; i++) {
+          let arg = arguments[i];
+          frequencyCounter[arg] = (frequencyCounter[arg] || 0) + 1;
+        }
+      
+     
+        for (let key in frequencyCounter) {
+         
+          if (frequencyCounter[key] > 1) {
+           
+            return true;
+          }
+        }
+      
+     
+        return false;
+      }
+      
+     
+      console.log(areThereDuplicates(1, 2, 3)); //false
+      console.log(areThereDuplicates(1, 2, 2)); //true
