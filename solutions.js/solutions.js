@@ -97,3 +97,15 @@ const cheVowel = (char) => {
     return false
 }
 console.log(cheVowel('a'))
+
+
+//GET TWO LENGTHS\\
+//Return an array containing the lengths of the two input strings.
+//Commit your work with the message "get two lengths completed".
+
+    function twoLengths(str) {
+    const words = str.split(" ")
+    return words.map(str => $(words), $(words.length))
+}
+
+console.log(twoLengths("pepperoni pizza"))
