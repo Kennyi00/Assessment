@@ -63,22 +63,22 @@
 //If checkPrimereturns true, console.log the number.
 //Commit your work with the message "prime numbers completed".
 
-function printPrimes(num) {
+    function printPrimes(num) {
     for(let i = 2; i <= num; i++){
         if(checkPrime(i)){
             console.log(i)
+             }
         }
     }
-}
-printPrimes(19)
+    printPrimes(19)
 
 
 //Calculate the cube of the number by multiplying the number by itself twice.
 //Return the result.
 //Commit your work with the message "calculate the cube completed".
 
-const calculateCube = num => Math.pow(num, 3)
-console.log(calculateCube(2))
+    const calculateCube = num => Math.pow(num, 3)
+    console.log(calculateCube(2))
 
 
 
@@ -87,37 +87,31 @@ console.log(calculateCube(2))
 //Return trueif the character is a vowel, otherwise return false.
 //Commit your work with the message "is a vowel completed".
 
-const cheVowel = (char) => {
+    const cheVowel = (char) => {
     const vowels = ['a', 'e', 'i', 'o', 'u']
     for (let i = 0; i <= vowels.length; i++) {
         if(char.toLowerCase() === vowels[i]){
             return true
-        }
+         }
+     }
+     return false
     }
-    return false
-}
-console.log(cheVowel('a'))
+    console.log(cheVowel('a'))
 
 
 //GET TWO LENGTHS\\
 //Return an array containing the lengths of the two input strings.
 //Commit your work with the message "get two lengths completed".
 
-function twoLengths(str) {
-    const words = str.split(" ")
-    return words.map(str => $(words), $(words.length))
-}
-
-console.log(twoLengths("pepperoni pizza"))
 
 //GET MULTIPLE LENGTHS\\
 //Use the mapfunction to transform each string in the input array into its length.
 //Return the resulting array of lengths.
 //Commit your work with the message "get multiple lengths completed".
 
-const inputArray = ["basketball", "football", "soccer", "baseball"]
-const resultLengths = inputArray.map(str => str.length)
-console.log(resultLengths)
+    const inputArray = ["basketball", "football", "soccer", "baseball"]
+    const resultLengths = inputArray.map(str => str.length)
+    console.log(resultLengths)
 
 //MAXIMUM OF THREE NUMBERS\\
 //Use the Math.maxfunction to find the maximum of the three numbers.
@@ -134,3 +128,14 @@ console.log(resultLengths)
     const result = findMax(15,35,12)
     console.log(result)
 
+//PRINT LONGEST WORD\\
+//Use the reducemethod to find the longest string in the array.
+//In case of a tie, the first word in the array order is returned.
+//Commit your work with the message "print longest word completed".
+
+    const findLongestWord = ["Superman", "Batman", "WonderWoman"]
+        const longestWord = findLongestWord.reduce((longest, current) => {
+            return current.length > longest.length ? current : longest
+        })
+
+        console.log(longestWord)
