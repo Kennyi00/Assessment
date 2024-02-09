@@ -79,3 +79,21 @@ printPrimes(19)
 
 const calculateCube = num => Math.pow(num, 3)
 console.log(calculateCube(2))
+
+
+
+//IS A VOWEL\\
+//Check if the input character is included in a string of vowels (both lowercase and uppercase).
+//Return trueif the character is a vowel, otherwise return false.
+//Commit your work with the message "is a vowel completed".
+
+const cheVowel = (char) => {
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+    for (let i = 0; i <= vowels.length; i++) {
+        if(char.toLowerCase() === vowels[i]){
+            return true
+        }
+    }
+    return false
+}
+console.log(cheVowel('a'))
