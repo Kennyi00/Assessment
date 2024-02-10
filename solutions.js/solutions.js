@@ -410,4 +410,4 @@ function validAnagram(first, second) { //Takes Two Strings As Arguments //Functi
      
       const inputString = "thisisawesome";
       const ressult = findLongestSubstring(inputString);
-      console.log(ressult);  
+      console.log(ressult);    
