@@ -326,3 +326,88 @@ function validAnagram(first, second) { //Takes Two Strings As Arguments //Functi
      
       console.log(areThereDuplicates(1, 2, 3)); //false
       console.log(areThereDuplicates(1, 2, 2)); //true
+
+
+      //SLIDING WINDOW\\
+      //ARTHURS EXAMPLE\\
+      function maxSubarraySum(arr, n) {
+        let maxSum = 0;//Checks if the length of the arary is less then n. If true it means that the arr is smaller than the desired size,
+        let tempSum = 0;//Checks if the length of the arary is less then n. If true it means that the arr is smaller than the desired size,
+        if (arr.length < n) return null;// If the arr length is less than n return null
+        
+        // Initial window sum
+        for (let i = 0; i < n; i++) { // Starts from i = 0 and iterates up to i = n-1
+            maxSum += arr[i];
+        }
+        tempSum = maxSum;//tempSum is set to equal maxSum.
+        
+        // Slide the window
+        for (let i = n; i < arr.length; i++) {//Loop starts from the index n and goes up to the end of the array.
+            tempSum = tempSum - arr[i - n] + arr[i]; //Each iteration tempSum is updated subtracting the element at index i-n
+            maxSum = Math.max(maxSum, tempSum);//Function compares maxSum and tempSum and assigns maximum value to maxSum.
+        }
+        
+        return maxSum;
+    }
+
+
+    //QUESTION 1: MINSUBARRAYLEN\\
+    //MY ANSWER
+    function minSubArrayLen(nums, target) {
+        let minLength = Infinity
+        let start = 0
+        let end = 0
+        let sum = 0
+
+            while (start < nums.length) {
+                if (sum < target && end < nums.length) {
+                    sum += nums[end]
+                    end++
+                } else if (sum >= target) {
+                    minLength = Math.min(minLength, end - start)
+                    sum -= nums[start]
+                    start++
+                } else {
+
+                }
+            }
+            return minLength === Infinity ? 0 : minLength
+    }
+
+    const nums = [2,3,1,2,4,3]
+    const target = 7
+    const res = minSubArrayLen(nums, target)
+    console.log(res)
+
+    //QUESTION 2: FIND LONGEST SUBSTRING\\
+    //LOOKED UP ANSWER\\
+    function findLongestSubstring(str) {
+        let longestLength = 0;
+        let start = 0;
+        const charIndexMap = {};
+      
+        for (let end = 0; end < str.length; end++) {
+          const currentChar = str[end];
+      
+          if (charIndexMap[currentChar] >= start) {
+           
+            start = charIndexMap[currentChar] + 1;
+          }
+      
+        
+          charIndexMap[currentChar] = end;
+      
+        
+          const currentLength = end - start + 1;
+      
+       
+          longestLength = Math.max(longestLength, currentLength);
+        }
+      
+        return longestLength;
+      }
+      
+     
+      const inputString = "thisisawesome";
+      const ressult = findLongestSubstring(inputString);
+      console.log(ressult);  
